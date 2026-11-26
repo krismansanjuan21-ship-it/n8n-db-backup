@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict OExP3r5m6bIxhfvm0bUPMhqHRPISDQc3gBg8JfhuX4uSVSwEogZ9LVnmY20TkBi
+-- \restrict yuwiYgy6p5jx3cX6Vx2gmjWIYAg92B7iHBUaHE2tvwmokeMsFqaejzboEYrhecx
 
 -- Dumped from database version 17.11
 -- Dumped by pg_dump version 17.12
@@ -33,7 +33,7 @@ COPY "auth"."audit_log_entries" ("instance_id", "id", "payload", "created_at", "
 -- Data for Name: custom_oauth_providers; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
-COPY "auth"."custom_oauth_providers" ("id", "provider_type", "identifier", "name", "client_id", "client_secret", "acceptable_client_ids", "scopes", "pkce_enabled", "attribute_mapping", "authorization_params", "enabled", "email_optional", "issuer", "discovery_url", "skip_nonce_check", "cached_discovery", "discovery_cached_at", "authorization_url", "token_url", "userinfo_url", "jwks_uri", "created_at", "updated_at", "custom_claims_allowlist") FROM stdin;
+COPY "auth"."custom_oauth_providers" ("id", "provider_type", "identifier", "name", "client_id", "client_secret", "acceptable_client_ids", "scopes", "pkce_enabled", "attribute_mapping", "authorization_params", "enabled", "email_optional", "issuer", "discovery_url", "skip_nonce_check", "cached_discovery", "discovery_cached_at", "authorization_url", "token_url", "userinfo_url", "jwks_uri", "created_at", "updated_at", "custom_claims_allowlist", "client_auth_method", "client_assertion_audience") FROM stdin;
 \.
 
 
@@ -605,7 +605,6 @@ COPY "public"."agents_observation_locks" ("agentId", "observationScopeId", "task
 --
 
 COPY "public"."instance_ai_threads" ("id", "resourceId", "title", "metadata", "createdAt", "updatedAt", "projectId") FROM stdin;
-ad38cc92-d002-4156-8ad4-de65bbad1ad7	63efb5cb-23b6-43d7-bea6-bd1d7984f46d		{"source":"canvas_action_button","origin":"internal"}	2026-10-26 07:09:40.337+00	2026-10-26 07:09:40.337+00	Z7jFGj3g0zBL4lSy
 1081b88e-ffe9-4ccb-86be-935195e70a42	63efb5cb-23b6-43d7-bea6-bd1d7984f46d		{"source":"canvas_action_button","origin":"internal"}	2026-10-27 07:29:31.711+00	2026-10-27 07:29:31.711+00	Z7jFGj3g0zBL4lSy
 \.
 
@@ -2609,7 +2608,7 @@ COPY "public"."trusted_key" ("sourceId", "kid", "data", "createdAt") FROM stdin;
 --
 
 COPY "public"."trusted_source" ("id", "name", "type", "issuer", "managedBy", "status", "lastError", "lastCheckedAt", "configVersion", "config", "createdAt", "updatedAt", "metadata", "discoveryClaimedAt", "discoveryClaimToken") FROM stdin;
-n8n-internal	n8n	oauth2	https://n8n-Man.onrender.com	system	healthy	\N	2026-11-25 06:21:26.502+00	1	U2FsdGVkX1+zGmK/dWvVYmtlbVSMHN+SPe92G7EtaUvhTLjs4qDMS4wYW4WNVmS/CY1+UGyQIc/7+HMRETczT6bFxQ+2dXZHOp3nh1/Ol3Ai3v8ZgxJ2pTc9CE8MzR2YLiMX7YDYstk5izeUGVS+5bjXSY+NY5xU4daux7Z7fXHAue9K3qHtfoKh/vvrQw7Xks62MDunF0ojSnJjqaNVLrLyueK6apaFIy4K84B5CsKM756ZSEv46VdOXiYRYGCTgCgm9FjETK4i4c48KFbjE6XKbuugljqnfBJIMBUIHdMXxMqxSdb8c4auZhRgaRzCbO/VbuNAitbSEzoOc1Fs7RKgX5sZLH4rC+piD3sRotc0kTVVIeRH4kze01tAgunE8xpSHZfA+HcP4jwxxHG0qSpzrAOlkeTH9qKrfMJtYMU82PnKqe1kZ3H7RrJhCibwjTWd3zeB4IlTqFiZQRRYZTG+CtOfpDYjGauckW2KnfpKTYJnUHMgPe113MCMPfWgQJ4e8PRgn6GS58LQG6Q6i7uk5PTcsZO9KRDz2Lmod1hKsnFtbwaRSe1I0QBKeDCtcaGyJoHqVE4wWGnsb+JECVSqprM439gGymWNEQV732YoPGn7cEQUuw+6ZarR/oMreE4C8/fjSBhlNxAoENSM6InASBpP70ZlDybMyeKKokRk6EXnAwMC50L+XQU8dS9ReWZyMCLWCu1vOQ+51n0VDzxliE4dCT/tKiJss11gsHAvATXTSbzdFhmLyFS803VxdJvDwGtUyBI1dar8iyYGxFpbAwdwX/UYDDOg+ZGsKXrodoX9OO+5iDbIyfmGsgGGiOM04g1WWEe7GitUz8Amq6BrMTnwd9QKf9DHLjYazApfzemNZr24M/HFHo3CUq7+cHWLpqq1b5JyjNpZvrcvx9ohC1xmbaJuuiz7yJsUVncg79hnFwjRhFHj181znoGOitWuIPqxeiqhP6yVfHR7dxRWHO4aSWl3tw1vY9hPf84=	2026-10-25 14:22:04.022+00	2026-11-25 06:21:26.502+00	{"version":1,"documents":[{"kind":"oauth2-authorization-server","fetchedAt":"2026-11-25T06:21:25.936Z","document":{"issuer":"https://n8n-Man.onrender.com","jwks_uri":"https://n8n-Man.onrender.com/rest/.well-known/jwks.json","authorization_endpoint":"https://n8n-Man.onrender.com/mcp-oauth/authorize","token_endpoint":"https://n8n-Man.onrender.com/mcp-oauth/token","registration_endpoint":"https://n8n-Man.onrender.com/mcp-oauth/register","revocation_endpoint":"https://n8n-Man.onrender.com/mcp-oauth/revoke","response_types_supported":["code"],"grant_types_supported":["authorization_code","refresh_token"],"token_endpoint_auth_methods_supported":["none","client_secret_post","client_secret_basic"],"code_challenge_methods_supported":["S256"],"authorization_response_iss_parameter_supported":true,"scopes_supported":["workflow:read","workflow:write","workflow:execute","execution:read","agent:read","agent:write","agent:execute","credential:read","dataTable:read","dataTable:write","project:read","project:write","tag:read","communityPackage:install","aiPreference:read","aiPreference:write"]}},{"kind":"jwks","fetchedAt":"2026-11-25T06:21:25.936Z","url":"https://n8n-Man.onrender.com/rest/.well-known/jwks.json","keys":[{"kid":"bnrEP3mphFnpXVx5","kty":"EC","use":"sig","alg":"ES256","crv":"P-256","x":"2_D5-k_8g-XVbyQ9It1IPFeyMTu5fj0bfEwdor3p4fQ","y":"XkMs_1O0Q9uAcVidXjY04VOIllcCwZo0Wbcm5U4K8yg"}]}]}	\N	\N
+n8n-internal	n8n	oauth2	https://n8n-Man.onrender.com	system	healthy	\N	2026-11-26 06:45:27.67+00	1	U2FsdGVkX1+zGmK/dWvVYmtlbVSMHN+SPe92G7EtaUvhTLjs4qDMS4wYW4WNVmS/CY1+UGyQIc/7+HMRETczT6bFxQ+2dXZHOp3nh1/Ol3Ai3v8ZgxJ2pTc9CE8MzR2YLiMX7YDYstk5izeUGVS+5bjXSY+NY5xU4daux7Z7fXHAue9K3qHtfoKh/vvrQw7Xks62MDunF0ojSnJjqaNVLrLyueK6apaFIy4K84B5CsKM756ZSEv46VdOXiYRYGCTgCgm9FjETK4i4c48KFbjE6XKbuugljqnfBJIMBUIHdMXxMqxSdb8c4auZhRgaRzCbO/VbuNAitbSEzoOc1Fs7RKgX5sZLH4rC+piD3sRotc0kTVVIeRH4kze01tAgunE8xpSHZfA+HcP4jwxxHG0qSpzrAOlkeTH9qKrfMJtYMU82PnKqe1kZ3H7RrJhCibwjTWd3zeB4IlTqFiZQRRYZTG+CtOfpDYjGauckW2KnfpKTYJnUHMgPe113MCMPfWgQJ4e8PRgn6GS58LQG6Q6i7uk5PTcsZO9KRDz2Lmod1hKsnFtbwaRSe1I0QBKeDCtcaGyJoHqVE4wWGnsb+JECVSqprM439gGymWNEQV732YoPGn7cEQUuw+6ZarR/oMreE4C8/fjSBhlNxAoENSM6InASBpP70ZlDybMyeKKokRk6EXnAwMC50L+XQU8dS9ReWZyMCLWCu1vOQ+51n0VDzxliE4dCT/tKiJss11gsHAvATXTSbzdFhmLyFS803VxdJvDwGtUyBI1dar8iyYGxFpbAwdwX/UYDDOg+ZGsKXrodoX9OO+5iDbIyfmGsgGGiOM04g1WWEe7GitUz8Amq6BrMTnwd9QKf9DHLjYazApfzemNZr24M/HFHo3CUq7+cHWLpqq1b5JyjNpZvrcvx9ohC1xmbaJuuiz7yJsUVncg79hnFwjRhFHj181znoGOitWuIPqxeiqhP6yVfHR7dxRWHO4aSWl3tw1vY9hPf84=	2026-10-25 14:22:04.022+00	2026-11-26 06:45:27.67+00	{"version":1,"documents":[{"kind":"oauth2-authorization-server","fetchedAt":"2026-11-26T06:45:25.960Z","document":{"issuer":"https://n8n-Man.onrender.com","jwks_uri":"https://n8n-Man.onrender.com/rest/.well-known/jwks.json","authorization_endpoint":"https://n8n-Man.onrender.com/mcp-oauth/authorize","token_endpoint":"https://n8n-Man.onrender.com/mcp-oauth/token","registration_endpoint":"https://n8n-Man.onrender.com/mcp-oauth/register","revocation_endpoint":"https://n8n-Man.onrender.com/mcp-oauth/revoke","response_types_supported":["code"],"grant_types_supported":["authorization_code","refresh_token"],"token_endpoint_auth_methods_supported":["none","client_secret_post","client_secret_basic"],"code_challenge_methods_supported":["S256"],"authorization_response_iss_parameter_supported":true,"scopes_supported":["workflow:read","workflow:write","workflow:execute","execution:read","agent:read","agent:write","agent:execute","credential:read","dataTable:read","dataTable:write","project:read","project:write","tag:read","communityPackage:install","aiPreference:read","aiPreference:write"]}},{"kind":"jwks","fetchedAt":"2026-11-26T06:45:25.960Z","url":"https://n8n-Man.onrender.com/rest/.well-known/jwks.json","keys":[{"kid":"bnrEP3mphFnpXVx5","kty":"EC","use":"sig","alg":"ES256","crv":"P-256","x":"2_D5-k_8g-XVbyQ9It1IPFeyMTu5fj0bfEwdor3p4fQ","y":"XkMs_1O0Q9uAcVidXjY04VOIllcCwZo0Wbcm5U4K8yg"}]}]}	\N	\N
 \.
 
 
@@ -3068,6 +3067,6 @@ SELECT pg_catalog.setval('"public"."workflow_statistics_id_seq"', 27, true);
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict OExP3r5m6bIxhfvm0bUPMhqHRPISDQc3gBg8JfhuX4uSVSwEogZ9LVnmY20TkBi
+-- \unrestrict yuwiYgy6p5jx3cX6Vx2gmjWIYAg92B7iHBUaHE2tvwmokeMsFqaejzboEYrhecx
 
 RESET ALL;
